@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir -p /var/tmp/portage
+
+mount -t tmpfs none /var/tmp/portage
+
+emerge $@
+
+umount /var/tmp/portage
