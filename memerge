@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ `id --user` != 0 ]]; then
+	echo "Please run me as root"
+	exit 1
+fi
+
 mkdir -p /var/tmp/portage
 
 mount -t tmpfs none /var/tmp/portage
